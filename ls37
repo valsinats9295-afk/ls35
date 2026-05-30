@@ -1,0 +1,32 @@
+class Character:
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health
+
+    def attack(self):
+        pass
+
+
+class Hero(Character):
+    def __init__(self, name, health, weapon):
+        Character.__init__(self, name, health)
+        self.weapon = weapon
+
+    def attack(self):
+        print(self.name, "attacks with", self.weapon)
+
+
+class Enemy(Character):
+    def __init__(self, name, health, damage):
+        Character.__init__(self, name, health)
+        self.damage = damage
+
+    def attack(self):
+        print(self.name, "attacks and deals", self.damage, "damage")
+
+
+hero = Hero("Artur", 100, "laser shoot")
+hero.attack()
+
+enemy = Enemy("Goblin", 50, 15)
+enemy.attack()
